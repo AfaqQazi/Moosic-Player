@@ -1,0 +1,50 @@
+/*
+Error: Invalid CSS after "        center": expected "{", was ";"
+        on line 47 of D:\Web\practices\deezer api\scss\main.scss
+
+42:     }
+43: 
+44:     #searchbar {
+45:         flex:1;
+46:         text-align: center;
+47:         center;
+48:     }
+49: 
+50:     img {
+51:        width:120px;
+52:        margin-top:-2%;
+
+Backtrace:
+D:\Web\practices\deezer api\scss\main.scss:47
+D:/softwares/preprocessors/koala/rubygems/gems/sass-3.5.2/lib/sass/scss/parser.rb:1278:in `expected'
+D:/softwares/preprocessors/koala/rubygems/gems/sass-3.5.2/lib/sass/scss/parser.rb:1208:in `expected'
+D:/softwares/preprocessors/koala/rubygems/gems/sass-3.5.2/lib/sass/scss/parser.rb:1203:in `tok!'
+D:/softwares/preprocessors/koala/rubygems/gems/sass-3.5.2/lib/sass/scss/parser.rb:677:in `block'
+D:/softwares/preprocessors/koala/rubygems/gems/sass-3.5.2/lib/sass/scss/parser.rb:747:in `declaration_or_ruleset'
+D:/softwares/preprocessors/koala/rubygems/gems/sass-3.5.2/lib/sass/scss/parser.rb:697:in `block_child'
+D:/softwares/preprocessors/koala/rubygems/gems/sass-3.5.2/lib/sass/scss/parser.rb:689:in `block_contents'
+D:/softwares/preprocessors/koala/rubygems/gems/sass-3.5.2/lib/sass/scss/parser.rb:678:in `block'
+D:/softwares/preprocessors/koala/rubygems/gems/sass-3.5.2/lib/sass/scss/parser.rb:747:in `declaration_or_ruleset'
+D:/softwares/preprocessors/koala/rubygems/gems/sass-3.5.2/lib/sass/scss/parser.rb:697:in `block_child'
+D:/softwares/preprocessors/koala/rubygems/gems/sass-3.5.2/lib/sass/scss/parser.rb:689:in `block_contents'
+D:/softwares/preprocessors/koala/rubygems/gems/sass-3.5.2/lib/sass/scss/parser.rb:678:in `block'
+D:/softwares/preprocessors/koala/rubygems/gems/sass-3.5.2/lib/sass/scss/parser.rb:670:in `ruleset'
+D:/softwares/preprocessors/koala/rubygems/gems/sass-3.5.2/lib/sass/scss/parser.rb:696:in `block_child'
+D:/softwares/preprocessors/koala/rubygems/gems/sass-3.5.2/lib/sass/scss/parser.rb:689:in `block_contents'
+D:/softwares/preprocessors/koala/rubygems/gems/sass-3.5.2/lib/sass/scss/parser.rb:137:in `stylesheet'
+D:/softwares/preprocessors/koala/rubygems/gems/sass-3.5.2/lib/sass/scss/parser.rb:41:in `parse'
+D:/softwares/preprocessors/koala/rubygems/gems/sass-3.5.2/lib/sass/engine.rb:414:in `_to_tree'
+D:/softwares/preprocessors/koala/rubygems/gems/sass-3.5.2/lib/sass/engine.rb:389:in `_render_with_sourcemap'
+D:/softwares/preprocessors/koala/rubygems/gems/sass-3.5.2/lib/sass/engine.rb:307:in `render_with_sourcemap'
+D:/softwares/preprocessors/koala/rubygems/gems/sass-3.5.2/lib/sass/exec/sass_scss.rb:391:in `run'
+D:/softwares/preprocessors/koala/rubygems/gems/sass-3.5.2/lib/sass/exec/sass_scss.rb:63:in `process_result'
+D:/softwares/preprocessors/koala/rubygems/gems/sass-3.5.2/lib/sass/exec/base.rb:52:in `parse'
+D:/softwares/preprocessors/koala/rubygems/gems/sass-3.5.2/lib/sass/exec/base.rb:19:in `parse!'
+D:/softwares/preprocessors/koala/rubygems/gems/sass-3.5.2/bin/sass:13:in `<top (required)>'
+D:/softwares/preprocessors/koala/bin/sass:22:in `load'
+D:/softwares/preprocessors/koala/bin/sass:22:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid CSS after \"        center\": expected \"{\", was \";\"\A         on line 47 of D:\Web\practices\deezer api\scss\main.scss\A \A 42:     }\A 43: \A 44:     #searchbar {\A 45:         flex:1;\A 46:         text-align: center;\A 47:         center;\A 48:     }\A 49: \A 50:     img {\A 51:        width:120px;\A 52:        margin-top:-2%;"; }

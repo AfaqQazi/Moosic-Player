@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Slabo+27px&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Livvic&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+
+    <!-- header -->
+    <header>
+        <div id="flex">
+            <div id="logo">
+                <img src="../images/cow.png" alt="">
+                <h3>M<span class="color">oo</span>sic Player</h3>
+            </div>
+            <div id="searchbar">
+                <input value="eminem" type="text" class="search-artist" placeholder="Type Your Fav Artist First">
+                <input value="mockingbird" type="text" class="search-music" placeholder=" Then Type Artist Song Name">
+                <div class="submit">
+                    <button>Submit</button>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="main-container">
+            <!-- Suggest songs -->
+            <div class="suggested-songs">
+                <table>
+                    <tr>
+                        <th> Play</th>
+                        <th>Song</th>
+                        <th>Artist</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- now playing -->
+        <div id="now-playing">
+            <p>Now Playing : <span></span></p>
+            <img src="images/sound-frequency.png" alt=""> <img src="images/sound-frequency.png" alt=""><img
+                src="images/sound-frequency.png" alt=""><img src="images/sound-frequency.png" alt="">
+        </div>
+
+        <!-- Bottom player -->
+        <div id="player">
+            <div class="buttons">
+                <div><img src="images/fast-backward.png"></div>
+                <div><img src="images/player_play.png"></div>
+                <div><img src="images/fast-forward.png"></div>
+            </div>
+            <div class="info">
+                <label for="bar">
+                    <span class="time-past">0:00</span>
+                    <input id="bar" type="range" value="0" min="0" max="100">
+                    <span class="max-time">3:00</span>
+                </label>
+            </div>
+        </div>
+
+
+    </header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="js/main.js">
+    </script>
+</body>
+
+</html>
