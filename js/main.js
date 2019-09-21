@@ -65,7 +65,6 @@ $(function () {
                 alert('No Such Artist Found')
                 return;
             }
-            console.log(response);
 
             // cache
             let $songsArray = response.data;
@@ -131,7 +130,12 @@ $(function () {
 
                 } else {
                     audio.pause();
-                    audio.currentTime = 0;
+                    if (audio.currentTime >= 0 && audio.currentTime <= audio.duration) {
+                        audio.currentTime = audio.currentTime;
+                    } else {
+                        audio.currentTime = 0;
+                    }
+
                     img.src = "../images/play.png";
                     // do same with player button
                     $playerPlayBtn.attr("src", "../images/player_play.png");
@@ -197,7 +201,16 @@ $(function () {
             })
 
             // Next Song
-            $playerNextBtn.on('click', function () {
+            $playerNextBtn.on('click', next);
+            function next() {
+                // all audio reset
+                let table = document.getElementsByTagName('table')[0];
+                let allAudios = table.querySelectorAll('audio');
+                allAudios.forEach(audio => {
+                    audio.currentTime = 0;
+                });
+                console.log(allAudios);
+                // NEXT
                 let $tableImg = FindSong().tableImg;
                 let $tableAudio = FindSong().audio;
                 // Flip($tableImg, $tableAudio); // bug in this one
@@ -223,11 +236,18 @@ $(function () {
                     let $nextElementSong = $nextElementSongTag.innerHTML;
                     $nowPlayingSpan.html($nextElementSong);
                 }
+            }
 
-            })
 
-            // Next Song
-            $PlayerPrevBtn.on('click', function () {
+            // prev
+            $PlayerPrevBtn.on('click', prev);
+            function prev() {
+                // all audio reset
+                let table = document.getElementsByTagName('table')[0];
+                let allAudios = table.querySelectorAll('audio');
+                allAudios.forEach(audio => {
+                    audio.currentTime = 0;
+                });
                 let $tableImg = FindSong().tableImg;
                 let $tableAudio = FindSong().audio;
                 // Flip($tableImg, $tableAudio); // bug in this one
@@ -255,14 +275,16 @@ $(function () {
                         let $previousSong = $previousSongTag.innerHTML;
                         $nowPlayingSpan.html($previousSong);
                     }
+
                 }
 
-            })
+            }
+
+
 
             // player range
             let $tableBtns = $('table tr td:nth-child(1) img');
             $tableBtns.on('click', startRange);
-            $playerPlayBtn.on('click', startRange);
             $playerNextBtn.on('click', startRange);
             $PlayerPrevBtn.on('click', startRange);
             let a;
@@ -293,22 +315,19 @@ $(function () {
                     $endTime.html(`${songDuraInMinutes}:${SongDuratSecLeft}`);
 
                     a = setInterval(start, 1000);
-                    console.log(audio.duration);
                     function start() {
-                        console.log(audio.currentTime);
+                        if (audio.ended == true) {
+                            clearInterval(a);
+                            next();
+                            startRange();
+                        }
                         $songBar.val(`${audio.currentTime / audio.duration * 100}`);
                     }
 
                     $songBar.on('change', function () {
-                        // clearInterval(a);
-                        // a = setInterval(function () {
-                        //     console.log(audio.currentTime);
-                        //     audio.currentTime = audio.currentTime - $songBar.val();
-                        //     $songBar.val(`${Math.floor(audio.currentTime / audio.duration * 100)}`);
-                        // }, 1000)
                         audio.currentTime = ($songBar.val() / 100) * audio.duration;
                     })
-                }, 1)
+                }, 0.5)
             }
 
             removeDuplicates();
